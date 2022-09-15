@@ -27,10 +27,39 @@ public class AppClienteBanco {
                     String conta = entrada.next();
                     //chamada ao método remoto, como se fosse executar localmente
                     System.out.println(banco.saldo(conta));
+                    break;
                 }
                 case 2: {
                     //chamada ao método remoto, como se fosse executar localmente
-                    System.out.println(banco.quantidadeContas());
+                    System.out.println("Quantidade de Contas: " + banco.quantidadeContas());
+                    break;
+                }
+                case 3: {
+                    System.out.println("Digite o número da conta:");
+                    String numeroDaconta = entrada.next();
+
+                    System.out.println("Digite o saldo da conta:");
+                    double saldo = entrada.nextDouble();
+                    
+                    System.out.println(banco.ContaNova(numeroDaconta, saldo));
+                    System.out.println("Conta criada com sucesso!");
+                    break;
+                }
+                case 4: {
+                    System.out.println("Digite o número da conta:");
+                    String numeroDaconta = entrada.next();
+                    
+                    System.out.println(banco.PesquisaDaConta(numeroDaconta));
+                    break;
+                }
+                
+                case 5: {
+                    System.out.println("Digite o número da conta: ");
+                    String numeroDaconta = entrada.next();
+
+                    banco.RemocaoDaConta(numeroDaconta);
+                    System.out.println("Conta excluída com sucesso!");
+                    break;
                 }
             }
             menu();
@@ -39,10 +68,15 @@ public class AppClienteBanco {
     }
 
     public static void menu() {
-        System.out.println("\n=== BANCO RMI (ou FMI?!) ===");
+        System.out.println("\n=== BANCO RMI (ou FMI?! Quem saberá?) ===");
         System.out.println("1 - Saldo da conta");
-        System.out.println("2 - Quantidade de contas");
+        System.out.println("Adriana Albuquerque de Moura");
+        System.out.println("2 - Quantidade de Contas");
+        System.out.println("3 - Criar uma Conta");
+        System.out.println("4 - Pesquisar Conta");
+        System.out.println("5 - Remover Conta");
         System.out.println("9 - Sair");
+        System.out.println("Adriana Albuquerque de Moura :D");
     }
 
 }
